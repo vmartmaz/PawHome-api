@@ -24,6 +24,8 @@ async def lifespan(app: FastAPI):
     db = client.pawhome_db  # Nombre de la base de datos
     print("¡Conectado a MongoDB exitosamente!")
     
+    # AÑADE ESTA LÍNEA PARA VER QUÉ ESTÁ LEYENDO:
+    print(f"---- URL QUE ESTOY USANDO: {mongo_url} ----")
     yield  # Aquí la API se queda escuchando peticiones
     
     # 2. Al apagar: Cerramos la conexión de forma segura
